@@ -14,7 +14,9 @@ define([
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
 
-    connection.on('clickedNext', save);
+    //connection.on('clickedNext', save);
+    connection.on('clickedNext', onClickedNext);
+    connection.on('clickedBack', onClickedBack);
    
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
@@ -54,6 +56,15 @@ define([
             text: 'done',
             visible: true
         });
+    }
+    
+    function onClickedNext() {
+        save();
+        connection.trigger('nextStep');
+    }
+
+    function onClickedBack() {
+        connection.trigger('prevStep');
     }
 
     function onGetTokens(tokens) {
