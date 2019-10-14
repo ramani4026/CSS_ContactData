@@ -33,7 +33,7 @@ function makecall(){
 	const data = JSON.stringify({ "name": "" });
 
 	const options = {
-  		hostname: "https://pub.s7.exacttarget.com/rp2cnw2q5k1",
+  		hostname: "pub.s7.exacttarget.com/rp2cnw2q5k1",
   		port: 443,
   		path: "/",
   		method: "POST"
