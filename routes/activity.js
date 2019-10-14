@@ -28,7 +28,7 @@ function makecall(){
 	var request=require("request");
  	var options = {
           	method: 'POST',
-          	uri: 'https://pub.s7.exacttarget.com/rp2cnw2q5k1',
+          	uri: 'https://b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post',
                 headers: ''           
        		};
   	request(options, function(error, response, body) {
