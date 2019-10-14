@@ -9,6 +9,7 @@ var http = require('https');
 
 exports.logExecuteData = [];
 
+/*
 function makecall(){ 
 	console.log("Entered makecall");
 	var request=require("request");
@@ -21,6 +22,24 @@ function makecall(){
 	});
 	console.log("Exit makecall");
 };
+*/
+
+function makecall(){ 
+	var request=require("request");
+ 	var options = {
+          	method: 'POST',
+          	uri: 'https://pub.s7.exacttarget.com/rp2cnw2q5k1',
+                headers: ''           
+       		};
+  	request(options, function(error, response, body) {
+               if(error){
+                  console.log(error);
+             }else{
+                  console.log(response);
+            }
+        });
+});
+}
 
 /*function makecall(){ 
 	var https = require('https');
