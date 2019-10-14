@@ -37,22 +37,22 @@ function makecall(){
   		port: 443,
   		path: "/",
   		method: "POST"
-  		//headers: {
-    		//"Content-Type": "application/json",
-    		//"Content-Length": data.length
-  		//}
+  		headers: {
+    		"Content-Type": "application/json",
+    		"Content-Length": data.length
+  		}
 	};
 
-        const req = https.request(options);
-	/* const req = https.request(options, (res) => {
+       // const req = https.request(options);
+	const req = https.request(options, (res) => {
 		console.log("Status code :");
-		//console.log("statusCode:" + ${res.statusCode});
+		console.log("statusCode:" + ${res.statusCode});
 
 		res.on('data', (d) => {
 			process.stdout.write(d);
 			console.log(d);
-		});  */
-	//});
+		});  
+	});
 
 	req.write(data);
 	req.end();
