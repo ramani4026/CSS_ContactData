@@ -33,7 +33,7 @@ function makecall(){
 	const data = JSON.stringify({ "name": "" });
 
 	const options = {
-  		hostname: "https://b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post",
+  		hostname: "b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post",
   		port: 443,
   		path: "/",
   		method: "POST",
