@@ -38,8 +38,7 @@ function makecall(){
                   console.log(response);
             }
         });
-});
-}
+};
 
 /*function makecall(){ 
 	var https = require('https');
