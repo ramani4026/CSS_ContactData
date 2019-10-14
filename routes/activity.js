@@ -33,7 +33,7 @@ function makecall(){
 	var https = require("https");
 	var data = JSON.stringify({ "name": "" });
 
-	var options = {
+	const options = {
   		hostname: "https://b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post",
   		port: 443,
   		path: "/",
@@ -47,10 +47,10 @@ function makecall(){
 	var req = https.request(options, (res) => {
 		console.log(statusCode: ${res.statusCode});
 
-		//res.on('data', (d) => {
-			//process.stdout.write(d);
-			//console.log(d);
-		//});
+		res.on('data', (d) => {
+			process.stdout.write(d);
+			console.log(d);
+		});
 	});  
 
 	req.write(data);
