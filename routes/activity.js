@@ -10,21 +10,22 @@ var http = require('https');
 exports.logExecuteData = [];
 
 function makecall(){
-    var request = new XMLHttpRequest()
-	//request.open('POST', 'https://pub.s7.exacttarget.com/rp2cnw2q5k1', true)
-        request.open('POST', 'https://b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post', true)
+	console.log("Entered makecall");
+    	var request = new XMLHttpRequest();
+	request.open('POST', 'https://pub.s7.exacttarget.com/rp2cnw2q5k1', true);
+        //request.open('POST', 'https://b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post', true);
 	request.onload = function() {
   	// Begin accessing JSON data here
- 	 var data = JSON.parse(this.response)
-	console.log('data'+ data)
+ 	 var data = JSON.parse(this.response);
+	console.log("data :"+ data);
   	if (request.status >= 200 && request.status < 400) {
-        console.log('UPDATE SUCCESSFUL')
+        console.log('UPDATE SUCCESSFUL');
   	} else {
-    		console.log('error')
+    		console.log('error');
  	 }
 	}
 
-	request.send()
+	request.send();
 };
 
 function logData(req) {
@@ -71,7 +72,7 @@ function logData(req) {
  */
 exports.edit = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
-    //console.log( req.body );
+    console.log("Req body from edit : " + req.body );
     logData(req);
     res.send(200, 'Edit');
 };
@@ -81,7 +82,7 @@ exports.edit = function (req, res) {
  */
 exports.save = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
-    //console.log( req.body );
+    console.log("Req body from save : " + req.body );
     logData(req);
     res.send(200, 'Save');
 };
@@ -90,7 +91,7 @@ exports.save = function (req, res) {
  * POST Handler for /execute/ route of Activity.
  */
 exports.execute = function (req, res) {
-
+    console.log("Req body from execute : " + req.body );
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
@@ -106,7 +107,9 @@ exports.execute = function (req, res) {
             var decodedArgs = decoded.inArguments[0];
             
             logData(req);
+	    console.log("Before make call : ");
             makecall();
+	    console.log("After make call : ");
             res.send(200, 'Execute');
         } else {
             console.error('inArguments invalid.');
