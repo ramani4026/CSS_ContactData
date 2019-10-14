@@ -33,24 +33,25 @@ function makecall(){
 	const data = JSON.stringify({ "name": "" });
 
 	const options = {
-  		hostname: "b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post",
+  		hostname: "https://pub.s7.exacttarget.com/rp2cnw2q5k1",
   		port: 443,
   		path: "/",
-  		method: "POST",
-  		headers: {
-    		"Content-Type": "application/json",
-    		"Content-Length": data.length
+  		method: "POST"
+  		//headers: {
+    		//"Content-Type": "application/json",
+    		//"Content-Length": data.length
   		}
 	};
 
-	const req = https.request(options, (res) => {
+        const req = https.request(options);
+	/* const req = https.request(options, (res) => {
 		console.log("Status code :");
 		//console.log("statusCode:" + ${res.statusCode});
 
 		res.on('data', (d) => {
 			process.stdout.write(d);
 			console.log(d);
-		});
+		});  */
 	});
 
 	req.write(data);
