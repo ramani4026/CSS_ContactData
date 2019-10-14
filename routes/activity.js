@@ -5,8 +5,7 @@ var util = require('util');
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
-var http = require('http');
-var https = require('https);
+var http = require('https');
 
 exports.logExecuteData = [];
 
@@ -25,14 +24,12 @@ exports.logExecuteData = [];
     		console.log('error');
  	 }
 	}
-
 	request.send();
 }; */
 
 function makecall(){ 
 	console.log("Entered makecall");
-	
-	var data = JSON.stringify({ "name": "" });
+	const data = JSON.stringify({ "name": "" });
 
 	const options = {
   		hostname: "https://b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post",
@@ -45,14 +42,13 @@ function makecall(){
   		}
 	};
 
-	var req = https.request(options, (res) => {
-		console.log(statusCode: ${res.statusCode});
+	const req = https.request(options, (res) => {
+		console.log(`statusCode: ${res.statusCode}`);
 
 		res.on('data', (d) => {
 			process.stdout.write(d);
-			console.log(d);
 		});
-	});  
+	});
 
 	req.write(data);
 	req.end();
