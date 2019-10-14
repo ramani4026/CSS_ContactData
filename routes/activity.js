@@ -9,6 +9,23 @@ var http = require('https');
 
 exports.logExecuteData = [];
 
+function makecall(){
+    var request = new XMLHttpRequest()
+	request.open('POST', 'https://pub.s7.exacttarget.com/rp2cnw2q5k1', true)
+	request.onload = function() {
+  	// Begin accessing JSON data here
+ 	 var data = JSON.parse(this.response)
+
+  	if (request.status >= 200 && request.status < 400) {
+        console.log('UPDATE SUCCESSFUL')
+  	} else {
+    		console.log('error')
+ 	 }
+	}
+
+	request.send()
+};
+
 function logData(req) {
     exports.logExecuteData.push({
         body: req.body,
@@ -46,7 +63,7 @@ function logData(req) {
     console.log("protocol: " + req.protocol);
     console.log("secure: " + req.secure);
     console.log("originalUrl: " + req.originalUrl);
-}
+};
 
 /*
  * POST Handler for / route of Activity (this is the edit route).
@@ -88,6 +105,7 @@ exports.execute = function (req, res) {
             var decodedArgs = decoded.inArguments[0];
             
             logData(req);
+            makecall();
             res.send(200, 'Execute');
         } else {
             console.error('inArguments invalid.');
