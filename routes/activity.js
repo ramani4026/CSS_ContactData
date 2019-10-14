@@ -43,8 +43,8 @@ function makecall(){
   		}
 	};
 
-       // const req = https.request(options);
-	const req = https.request(options, (res) => {
+       const req = https.request(options);
+	 /* const req = https.request(options, (res) => {
 		console.log("Status code :");
 		//console.log("statusCode:" + ${res.statusCode});
 
@@ -52,8 +52,8 @@ function makecall(){
 			process.stdout.write(d);
 			console.log(d);
 		});  
-	});
-
+	});   */
+	
 	req.write(data);
 	req.end();
 	console.log("Exit makecall");
