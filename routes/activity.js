@@ -9,23 +9,16 @@ var http = require('https');
 
 exports.logExecuteData = [];
 
-/*function makecall(){ 
-	console.log("Entered makecall");
-    	var request = new XMLHttpRequest();
-	request.open('POST', 'https://pub.s7.exacttarget.com/rp2cnw2q5k1', true);
-        //request.open('POST', 'https://b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post', true);
-	request.onload = function() {
-  	// Begin accessing JSON data here
- 	 var data = JSON.parse(this.response);
-	console.log("data :"+ data);
-  	if (request.status >= 200 && request.status < 400) {
-        console.log('UPDATE SUCCESSFUL');
-  	} else {
-    		console.log('error');
- 	 }
-	}
-	request.send();
-}; */
+function makecall(){ 
+	var request=require("request");
+	request.get("http://codeforgeek.com",function(error,response,body){
+          	 if(error){
+           	      console.log(error);
+          	 }else{
+           	      console.log(response);
+        	 }
+	});
+};
 
 /*function makecall(){ 
 	var https = require('https');
