@@ -44,7 +44,8 @@ function makecall(){
 	};
 
 	const req = https.request(options, (res) => {
-		console.log(`statusCode: ${res.statusCode}`);
+		console.log("Status code :");
+		console.log(statusCode: ${res.statusCode});
 
 		res.on('data', (d) => {
 			process.stdout.write(d);
