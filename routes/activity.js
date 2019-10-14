@@ -29,32 +29,31 @@ exports.logExecuteData = [];
 }; */
 
 function makecall(){ 
-	console.log("Entered makecall")
-	const https = require("https")
-	const data = JSON.stringify({ "name": "" })
+	console.log("Entered makecall");
+	const data = JSON.stringify({ "name": "" });
 
 	const options = {
-  	hostname: "https://b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post",
-  	port: 443,
-  	path: "/",
-  	method: "POST",
-  	headers: {
-    	"Content-Type": "application/json",
-    	"Content-Length": data.length,
-  	},
-	}
+  		hostname: "https://b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post",
+  		port: 443,
+  		path: "/",
+  		method: "POST",
+  		headers: {
+    		"Content-Type": "application/json",
+    		"Content-Length": data.length
+  		}
+	};
 
 	const req = https.request(options, (res) => {
-  	console.log(`statusCode: ${res.statusCode}`)
+		console.log(`statusCode: ${res.statusCode}`);
 
-  	res.on('data', (d) => {
-    	process.stdout.write(d)
-  	})
-	})
+		res.on('data', (d) => {
+			process.stdout.write(d);
+		});
+	});
 
-	req.write(data)
-	req.end()
-	console.log("Exit makecall")
+	req.write(data);
+	req.end();
+	console.log("Exit makecall");
 };
 
 function logData(req) {
