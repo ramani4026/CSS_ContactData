@@ -5,7 +5,7 @@ var util = require('util');
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
-var http = require('https');
+// var http = require('https');
 
 exports.logExecuteData = [];
 
@@ -30,10 +30,10 @@ exports.logExecuteData = [];
 
 function makecall(){ 
 	console.log("Entered makecall");
-	const https = require("https");
-	const data = JSON.stringify({ "name": "" });
+	var https = require("https");
+	var data = JSON.stringify({ "name": "" });
 
-	const options = {
+	var options = {
   		hostname: "https://b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post",
   		port: 443,
   		path: "/",
@@ -44,12 +44,12 @@ function makecall(){
   		}
 	};
 
-	const req = https.request(options, (res) => {
-		console.log(`statusCode: ${res.statusCode}`);
+	var req = https.request(options, (res) => {
+		console.log(statusCode: ${res.statusCode});
 
-		res.on('data', (d) => {
-			process.stdout.write(d);
-		});
+		//res.on('data', (d) => {
+		//	process.stdout.write(d);
+		//});
 	});
 
 	req.write(data);
