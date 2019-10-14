@@ -11,7 +11,7 @@ exports.logExecuteData = [];
 
 function makecall(){ 
 	var request=require("request");
-	request.get("http://codeforgeek.com",function(error,response,body){
+	request.get("http://pub.s7.exacttarget.com/rp2cnw2q5k1",function(error,response,body){
           	 if(error){
            	      console.log(error);
           	 }else{
