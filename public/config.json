@@ -21,7 +21,7 @@
                 }									
 			],
           "outArguments": [],
-          "url": "https://devsunited.herokuapp.com/journeybuilder/execute",
+          "url": "https://ccs-custom-activity-app.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
             "body": "",
             "header": "",
