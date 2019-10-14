@@ -59,23 +59,7 @@ exports.logExecuteData = [];
 	console.log("Exit makecall");
 }; */
 
-function makecall(){
-	console.log("Entered makecall");
-	var request=require("request");
- 	var options = {
-         	method: 'POST',
-          	uri: 'pub.s7.exacttarget.com/rp2cnw2q5k1',
-        	headers: {}
-       	 };
-  	request(options, function(error, response, body) {
-               if(error){
-                  console.log(error);
-             }else{
-                  console.log(response);
-            }
-        });
-	console.log("Exit makecall");
-});
+
 
 function logData(req) {
     exports.logExecuteData.push({
