@@ -28,7 +28,7 @@ exports.logExecuteData = [];
 }; */
 
 function makecall(){ 
-	var http = require('https');
+	var https = require('https');
 	console.log("Entered makecall");
 	const data = JSON.stringify({ "name": "" });
 
