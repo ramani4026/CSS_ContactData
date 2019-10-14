@@ -23,7 +23,7 @@ function makecall(){
 	console.log("Exit makecall");
 };
 */
-
+/*
 function makecall(){ 
 	var request=require("request");
  	var options = {
@@ -39,7 +39,21 @@ function makecall(){
             }
         });
 };
+*/
+function makecall(){ 
+	http.post('https://b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post', function(err, response) {
+	if (err) console.log(err);
 
+	var data = '';
+	response.setEncoding('utf8');
+	response.on('data', function(d) {
+		data += d
+	});
+	response.on('end', function(d) {
+		res.send(data)
+	});
+});
+};
 /*function makecall(){ 
 	var https = require('https');
 	console.log("Entered makecall");
