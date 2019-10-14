@@ -5,7 +5,8 @@ var util = require('util');
 const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
-// var http = require('https');
+var http = require('http');
+var https = require('https);
 
 exports.logExecuteData = [];
 
@@ -30,7 +31,7 @@ exports.logExecuteData = [];
 
 function makecall(){ 
 	console.log("Entered makecall");
-	var https = require("https");
+	
 	var data = JSON.stringify({ "name": "" });
 
 	const options = {
