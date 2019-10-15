@@ -167,8 +167,7 @@ exports.edit = function (req, res) {
  */
 exports.save = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
-    console.log("Req body from save : " + req.body );
-    logData(req);
+        logData(req);
     res.send(200, 'Save');
 };
 
@@ -190,6 +189,7 @@ exports.execute = function (req, res) {
             
             // decoded in arguments
             var decodedArgs = decoded.inArguments[0];
+	    console.log("Input args from execute : " + decodedArgs);
             
             logData(req);
 	    console.log("Before make call : ");
