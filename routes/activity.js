@@ -11,7 +11,7 @@ exports.logExecuteData = [];
 
 function displaydata(){
 	console.log("Entered displaydata");
-	console.log("Contact data" + {{Contact.Attribute.CCS.Email}});
+	console.log("inArguments :" + inArguments);
 	console.log("Exit displaydata");
 }
 /*
