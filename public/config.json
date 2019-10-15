@@ -16,9 +16,9 @@
     "arguments": {
         "execute": {
            "inArguments":[{
-            	   	 "emailAddress": "{{Contact.Attribute.CCS.Email}}",
-           		 "FirstName": "{{Contact.Attribute.CCS.FirstName}}",
-            		 "LastName": "{{Contact.Attribute.CCS.LastName}}"
+                         "emailAddress": "{{InteractionDefaults.Email}}",
+                         "FirstName": "{{Contact.Key}}",
+                         "LastName": "{{Contact.Attribute.CCS_POC_DE.LastName}}"
                		 }],
           "outArguments": [],
           "url": "https://ccs-custom-activity-app.herokuapp.com/journeybuilder/execute",
