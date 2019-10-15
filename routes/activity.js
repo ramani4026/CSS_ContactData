@@ -158,7 +158,7 @@ function logData(req) {
 exports.edit = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
     console.log("Req body from edit : " + req.body );
-    logData(req);
+    //logData(req);
     res.send(200, 'Edit');
 };
 
@@ -167,7 +167,7 @@ exports.edit = function (req, res) {
  */
 exports.save = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
-        logData(req);
+     //   logData(req);
     res.send(200, 'Save');
 };
 
@@ -175,12 +175,14 @@ exports.save = function (req, res) {
  * POST Handler for /execute/ route of Activity.
  */
 exports.execute = function (req, res) {
+    console.log("Entered execute of activity.js");
     console.log("Req body from execute : " + req.body );
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
         // verification error -> unauthorized request
         if (err) {
+	    console.log("Error in decoding JWT :");
             console.error(err);
             return res.status(401).end();
         }
