@@ -175,6 +175,7 @@ exports.save = function (req, res) {
  * POST Handler for /execute/ route of Activity.
  */
 exports.execute = function (req, res) {
+    logData(req);
     console.log("Entered execute of activity.js");
     console.log("Req body from execute : " + req.body );
     // example on how to decode JWT
@@ -213,7 +214,7 @@ exports.execute = function (req, res) {
 exports.publish = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-    logData(req);
+    //logData(req);
     res.send(200, 'Publish');
 };
 
@@ -223,6 +224,6 @@ exports.publish = function (req, res) {
 exports.validate = function (req, res) {
     // Data from the req and put it in an array accessible to the main app.
     //console.log( req.body );
-    logData(req);
+    //logData(req);
     res.send(200, 'Validate');
 };
