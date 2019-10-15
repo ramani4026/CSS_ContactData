@@ -195,9 +195,10 @@ exports.execute = function (req, res) {
 	    console.log("Input args from execute : " + decodedArgs);
             
             logData(req);
-	    console.log("Before make call : ");
+	    console.log("****Before make call***");
 	    //displaydata();
             //makecall();
+	    console.log(decodedArgs);
 	    console.log("After make call : ");
             res.send(200, 'Execute');
         } else {
