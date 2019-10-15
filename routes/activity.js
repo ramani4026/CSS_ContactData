@@ -25,6 +25,7 @@ function makecall(){
 */
 
 function makecall(){ 
+	console.log("Entered makecall func");
 	var request=require("request");
  	var options = {
           	method: 'POST',
@@ -35,6 +36,7 @@ function makecall(){
                if(error){
                   console.log(error);
 			   }else{
+				        console.log("Response :");
                  			console.log(response);
 				/*	var data = '';
 					console.log("Data" + data);
@@ -49,6 +51,7 @@ function makecall(){
 					console.log("Exit makecall func");  */
 				}	
     });
+	console.log("Exit makecall func");
 };
 
 /*
