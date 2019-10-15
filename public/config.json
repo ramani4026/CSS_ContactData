@@ -16,7 +16,7 @@
     "arguments": {
         "execute": {
            "inArguments":[{
-            "emailAddress": "{{InteractionDefaults.Email}}",
+            "emailAddress": "{{Contact.key}}",
             "FirstName": "{{Contact.Attribute.CCS.LastName}}",
             "LastName": "{{Contact.Attribute.CCS_POC_DE.LastName}}"
                		 }],
