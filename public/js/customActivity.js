@@ -85,7 +85,7 @@ define([
             "tokens": authTokens,
             "emailAddress": "{{InteractionDefaults.Email}}",
             "FirstName": "{{Contact.Key}}",
-            "LastName": "{{Contact.Attribute.CCS.LastName}}"
+            "LastName": "{{Contact.Attribute.CCS_POC_DE.LastName}}"
         }];
         
         payload['metaData'].isConfigured = true;
