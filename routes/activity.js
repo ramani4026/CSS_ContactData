@@ -35,8 +35,8 @@ function makecall(){
                if(error){
                   console.log(error);
 			   }else{
-                 // console.log(response);
-					var data = '';
+                 			console.log(response);
+				/*	var data = '';
 					console.log("Data" + data);
 					response.setEncoding('utf8');
 					response.on('data', function(d) {
@@ -46,7 +46,7 @@ function makecall(){
 					console.log(data);
 					res.send(data)
 					});
-					console.log("Exit makecall func");
+					console.log("Exit makecall func");  */
 				}	
     });
 };
