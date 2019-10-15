@@ -15,11 +15,11 @@
     },
     "arguments": {
         "execute": {
-           "inArguments":[
-				{
-                    "emailAddress": "{{Contact.Attribute.CustomActivity.EmailAddress}}"
-                }									
-			],
+           "inArguments":[{
+            	   	 "emailAddress": "{{Contact.Attribute.CCS.Email}}",
+           		 "FirstName": "{{Contact.Attribute.CCS.FirstName}}",
+            		 "LastName": "{{Contact.Attribute.CCS.LastName}}"
+               		 }],
           "outArguments": [],
           "url": "https://ccs-custom-activity-app.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
