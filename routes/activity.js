@@ -41,17 +41,21 @@ function makecall(){
 };
 */
 function makecall(){ 
+	console.log("Entered makecall func");
 	http.post('https://b0149385-84da-4753-ac99-63db16ccf97f.mock.pstmn.io/ccs_mock_post', function(err, response) {
 	if (err) console.log(err);
 
 	var data = '';
+	console.log("Data" + data);
 	response.setEncoding('utf8');
 	response.on('data', function(d) {
 		data += d
-	});
+			});
 	response.on('end', function(d) {
+		console.log(data);
 		res.send(data)
 	});
+	console.log("Exit makecall func");
 });
 };
 /*function makecall(){ 
