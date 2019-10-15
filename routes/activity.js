@@ -11,7 +11,7 @@ exports.logExecuteData = [];
 
 function displaydata(){
 	console.log("Entered displaydata");
-	console.log("inArguments :" + inArguments);
+	//console.log("inArguments :" + inArguments);
 	console.log("Exit displaydata");
 }
 /*
@@ -196,7 +196,7 @@ exports.execute = function (req, res) {
             
             logData(req);
 	    console.log("Before make call : ");
-	    displaydata();
+	    //displaydata();
             //makecall();
 	    console.log("After make call : ");
             res.send(200, 'Execute');
