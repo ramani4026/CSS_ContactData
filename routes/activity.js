@@ -9,6 +9,11 @@ var http = require('https');
 
 exports.logExecuteData = [];
 
+function displaydata(){
+	console.log("Entered displaydata");
+	console.log("Contact data" + payload['arguments'].execute.inArguments);
+	console.log("Exit displaydata");
+}
 /*
 function makecall(){ 
 	console.log("Entered makecall");
@@ -188,7 +193,8 @@ exports.execute = function (req, res) {
             
             logData(req);
 	    console.log("Before make call : ");
-            makecall();
+	    displaydata();
+            //makecall();
 	    console.log("After make call : ");
             res.send(200, 'Execute');
         } else {
