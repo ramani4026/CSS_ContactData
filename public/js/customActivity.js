@@ -82,8 +82,8 @@ define([
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "{{Contact.Attribute.CCS.Email}}"
-            "FirstName": "{{Contact.Attribute.CCS.FirstName}}"
+            "emailAddress": "{{Contact.Attribute.CCS.Email}}",
+            "FirstName": "{{Contact.Attribute.CCS.FirstName}}",
             "LastName": "{{Contact.Attribute.CCS.LastName}}"
         }];
         
