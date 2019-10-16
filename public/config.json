@@ -13,7 +13,6 @@
           "step1Label": "Configure Activity"
         }
     },
-    "schema":{
         "arguments": {
             "execute": {
             "inArguments":[{
@@ -30,8 +29,7 @@
             "useJwt": true,
             "timeout": 10000
         }
-    }
-    },
+     },
     "configurationArguments": {
       "applicationExtensionKey": "30d22b16-6801-4bd8-8ccf-5de73c356d74",
       "save": {
