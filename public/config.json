@@ -13,22 +13,24 @@
           "step1Label": "Configure Activity"
         }
     },
-    "arguments": {
-        "execute": {
-           "inArguments":[{
-            "emailAddress": "{{Contact.key}}",
-             "FirstName": "{{Contact.Attribute.CCSPOC.FirstName}}",
-             "LastName": "{{Contact.Attribute.Consent.LastName}}"  
-               		 }],
-          "outArguments": [],
-          "url": "https://ccs-custom-activity-app.herokuapp.com/journeybuilder/execute",
-           "verb": "POST",
+    "schema":{
+        "arguments": {
+            "execute": {
+            "inArguments":[{
+                "emailAddress": "{{Contact.key}}",
+                 "FirstName": "{{Contact.Attribute.CCSPOC.FirstName}}",
+                "LastName": "{{Contact.Attribute.Consent.LastName}}"  
+               	    	 }],
+            "outArguments": [],
+            "url": "https://ccs-custom-activity-app.herokuapp.com/journeybuilder/execute",
+            "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
             "useJwt": true,
             "timeout": 10000
         }
+    }
     },
     "configurationArguments": {
       "applicationExtensionKey": "30d22b16-6801-4bd8-8ccf-5de73c356d74",
@@ -62,17 +64,4 @@
             "width": 1000,
           "fullscreen": false
         }
-    },
-    "schema": {
-        "arguments": {
-            "execute": {
-                "inArguments": [{
-            "emailAddress": "{{Contact.key}}",
-             "FirstName": "{{Contact.Attribute.CCSPOC.FirstName}}",
-             "LastName": "{{Contact.Attribute.Consent.LastName}}"  
-               		 }],
-                "outArguments": []
-            }
-        }
     }
-}
